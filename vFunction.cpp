@@ -20,6 +20,7 @@ class Player: public Entity {  //as Player is Entityt and Entity is Printable th
     public:
         Player(const std::string& name){m_Name = name;}
         std::string GetName() override {return m_Name;}
+        void PrintHello(){std::cout<<"Hello from "<<m_Name<<"\n";}
        // std::string GetClassName() override {return "Player";}
 };
 
