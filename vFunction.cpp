@@ -4,7 +4,7 @@
 //Printable interface
 class Printable {
     public:
-        virtual std::string GetClassName() = 0;
+        virtual std::string GetClassName() = 0; //Pure virtual function 
 };
 
 class Entity : public Printable {
