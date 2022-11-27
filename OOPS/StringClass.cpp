@@ -1,5 +1,7 @@
 //Implementing String class using OOPS
 //Need to make some changes
+// https://medium.com/swlh/write-your-own-c-stl-string-class-e20113a8de79
+// Also refer this for extra information 
 #include<iostream>
 #include<cstring>
 class String{
