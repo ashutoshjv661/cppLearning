@@ -1,5 +1,4 @@
 //Implementing String class using OOPS
-//Need to make some changes
 // https://medium.com/swlh/write-your-own-c-stl-string-class-e20113a8de79
 // Also refer this for extra information 
 #include<iostream>
@@ -60,7 +59,7 @@ class String{
         //     return *this;
         // }
         friend std::ostream& operator<<(std::ostream&,const String&);
-        friend std::istream& operator>>(std::istream&,const String&); //So that we can access the privat members
+        friend std::istream& operator>>(std::istream&,String&); //So that we can access the privat members
         ~String(){
             if(res){
                 delete[] res;
@@ -73,8 +72,12 @@ std::ostream& operator<<(std::ostream& stream,const String& str){
            stream<<"String val : => "<<str.res<<" \n";
            return stream;
 }
-std::istream& operator>>(std::istream& stream,const String& str){
-    stream>>str.res;    
+std::istream& operator>>(std::istream& stream,String& str){
+    char* temp = new char[100];
+    stream>>temp;
+    str.len = strlen(temp);
+    strcpy(str.res,temp); 
+    delete[] temp; 
     return stream;
 }
 
